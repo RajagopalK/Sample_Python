@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="First" default="init" basedir="D:\Raja K">
+
+	<property name="JAVA_HOME" value="C:\Program Files\Java\jdk1.8.0_102" />
+	<property name="BASE_DIR" value="D:\Raja K\Hello-World" />
+	
+	<target name="init" description="setup project directories">
+		<mkdir dir="Hello-World" />
+	</target >
+	<target name="create">
+		<echo file="${BASE_DIR}\Readme.txt" message="Read me first" append="true" />
+	</target>
+	<target name="ECHO_prop">
+		<echo>${JAVA_HOME}</echo>
+	</target>
+	<target name="Create des">
+		<mkdir dir="Destination" />
+	</target>
+	<target name="Copy">
+		<copy file="${BASE_DIR}\Readme.txt" tofile="D:\Raja K\Destination\ABC.txt" />
+	</target>
+	<target name="Delete">
+		<delete file="D:\Raja K\Hello-World\Readme.txt" />
+	</target>
+</project>
