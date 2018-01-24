@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Selenium" default="run" basedir=".">
+
+	<path id="selenium.classpath">
+		<fileset dir="D:\DevOps\Downloads\Selenium\selenium-java-3.8.1">
+			<include name="client*.jar" />
+			<include name="**\*.jar" />
+		</fileset>
+	</path>
+
+	<taskdef classpathref="selenium.classpath" resource="tasks.properties" />
+
+
+	<target name="compile" description="compile java">
+		<javac srcdir="D:\SeleniumPOC\Selenium\src" destdir="D:\SeleniumPOC\Selenium\bin">
+			<classpath refid="selenium.classpath" />
+		</javac>
+	</target>
+	<target name="jar" description="jar creation" depends="compile">
+		<jar destfile="D:\SeleniumPOC\Selenium\app.jar" basedir="D:\SeleniumPOC\Selenium\bin">
+		<fileset dir="D:\DevOps\Downloads\Selenium\selenium-java-3.8.1"><include name="*.jar"></include></fileset>
+		<fileset dir="D:\DevOps\Downloads\Selenium\selenium-java-3.8.1\libs"><include name="*.jar"></include></fileset>
+
+
+			<manifest>
+				<attribute name="Main-Class" value="com.automation.Amazon.LandingPage" />
+				<attribute name="Class-path" value="client-combined-3.8.1.jar"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="run" depends="jar">
+
+		<java dir="." classname="com.automation.Amazon.LandingPage" fork="true"
+			failonerror="true" maxmemory="128m">
+			<classpath>
+				<path refid="selenium.classpath" />
+				<pathelement location="app.jar" />
+			</classpath>
+		</java>
+
+
+	</target>
+
+</project>
+
