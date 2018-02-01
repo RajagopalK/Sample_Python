@@ -4,6 +4,6 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>main.java</groupId>
-    <artifactId>java-web-crawler</artifactId>
+    <artifactId>Maven1</artifactId>
     <version>1.0.0</version>
 </project>
