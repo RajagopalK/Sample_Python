@@ -15,7 +15,7 @@ if(msg.equals("Gradle")) {
    }
 else if(msg.equals("Maven")) {
 	 stage('MAVEN_BUILD') {
-     bat "mvn -f ./pom.xml clean install"
+     bat "mvn clean install"
     }
    }
 }
