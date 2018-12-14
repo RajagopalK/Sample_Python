@@ -10,12 +10,12 @@ def call(body) {
     def msg = pipelineParams.get("msg", "Hello World")
 if(msg.equals("Gradle")) {
     stage('GRADLE_BUILD') {
-     bat "gradle clean build"
+     sh "gradle clean build"
     }
    }
 else if(msg.equals("Maven")) {
 	 stage('MAVEN_BUILD') {
-     bat "mvn clean install"
+     sh "mvn clean install"
     }
    }
 }
