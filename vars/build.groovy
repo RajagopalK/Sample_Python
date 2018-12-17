@@ -18,7 +18,7 @@ if(msg.equals("Gradle")) {
    }
 else if(msg.equals("Maven")) {
 	 stage('MAVEN_BUILD') {
-			echo  %WORKSPACE%
+			bat 'echo %WORKSPACE%'
     }
 } catch(Exception e) {
      e.printStackTrace()
