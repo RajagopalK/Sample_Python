@@ -19,7 +19,6 @@ if(msg.equals("Gradle")) {
 else if(msg.equals("Maven")) {
 	 stage('MAVEN_BUILD') {
 			echo  %WORKSPACE%
-           	//bat 'mvn -f C:\Users\670334\.jenkins\workspace\pipeline-project\pom.xml clean install'
     }
 } catch(Exception e) {
      e.printStackTrace()
