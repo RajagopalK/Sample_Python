@@ -15,7 +15,7 @@ if(msg.equals("Gradle")) {
    }
 else if(msg.equals("Maven")) {
 	 stage('MAVEN_BUILD') {
-			bat 'bat 'echo %WORKSPACE%'
+			bat 'echo %WORKSPACE%'
     }
 }
 }
