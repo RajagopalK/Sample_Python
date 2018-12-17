@@ -12,18 +12,15 @@ def call(body) {
 if(msg.equals("Gradle")) {
     stage('GRADLE_BUILD') {
 	  
-      		bat 'gradle clean build'
+      	bat 'gradle clean build'
 
-}
+	}
    }
 else if(msg.equals("Maven")) {
 	 stage('MAVEN_BUILD') {
            	bat 'mvn -f C:\Users\670334\.jenkins\workspace\pipeline-project\pom.xml clean install'
     }
- }
-	}
-catch(Exception e)
-{
+} catch(Exception e) {
      e.printStackTrace()
-}
+	}
 }
