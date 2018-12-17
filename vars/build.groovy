@@ -8,19 +8,14 @@ def call(body) {
     body()
 
     def msg = pipelineParams.get("msg", "Hello World")
-	try{
 if(msg.equals("Gradle")) {
-    stage('GRADLE_BUILD') {
-	  
+    stage('GRADLE_BUILD') {  
       	bat 'gradle clean build'
-
 	}
    }
 else if(msg.equals("Maven")) {
 	 stage('MAVEN_BUILD') {
            	bat 'mvn -f C:\Users\670334\.jenkins\workspace\pipeline-project\pom.xml clean install'
     }
-} catch(Exception e) {
-     e.printStackTrace()
-	}
+}
 }
