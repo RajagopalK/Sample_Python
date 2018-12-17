@@ -14,7 +14,7 @@ catch(Exception e)
      e.printStackTrace()
 }
     stage ("End"){
-    echo "End of pipeline"
+        echo "Last"
     }
   }
 }
