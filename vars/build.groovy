@@ -1,4 +1,5 @@
 #!/usr/bin/groovy
+node{
 def call(body) {
     // evaluate the body block, and collect configuration into the object
 	// configParameters(artifactType,artifactTypeZip)
@@ -11,9 +12,7 @@ def call(body) {
 	
 if(msg.equals("Gradle")) {
     stage('GRADLE_BUILD') {
-	    node{
       		bat 'gradle clean build'
-	    }
 }
    }
 else if(msg.equals("Maven")) {
@@ -21,4 +20,5 @@ else if(msg.equals("Maven")) {
            	bat 'mvn clean install'
     }
  }
+}
 }
