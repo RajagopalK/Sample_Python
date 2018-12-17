@@ -15,6 +15,7 @@ if(msg.equals("Gradle")) {
    }
 else if(msg.equals("Maven")) {
 	 stage('MAVEN_BUILD') {
-			bat 'mvn clean install'
+			bat 'bat 'echo %WORKSPACE%'
     }
+}
 }
