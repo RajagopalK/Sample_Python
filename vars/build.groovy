@@ -9,17 +9,13 @@ def call(body) {
 
     def msg = pipelineParams.get("msg", "Hello World")
 if(msg.equals("Gradle")) {
-	node{
     stage('GRADLE_BUILD') {
       	bat 'gradle clean build'
 	}
-	}
    }
 else if(msg.equals("Maven")) {
-	node{
 	 stage('MAVEN_BUILD') {
 			bat 'echo %WORKSPACE%'
     }
-	}
 }
 }
