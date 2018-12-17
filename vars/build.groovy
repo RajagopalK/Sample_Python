@@ -8,18 +8,12 @@ def call(body) {
     body()
 
     def msg = pipelineParams.get("msg", "Hello World")
-	
+	try{
 if(msg.equals("Gradle")) {
     stage('GRADLE_BUILD') {
-	     try{
 	    node{
       		bat 'gradle clean build'
 	    }
-	     }
-	    catch(Exception e)
-{
-     e.printStackTrace()
-}
 }
    }
 else if(msg.equals("Maven")) {
@@ -27,4 +21,9 @@ else if(msg.equals("Maven")) {
            	bat 'mvn clean install'
     }
  }
+	}
+catch(Exception e)
+{
+     e.printStackTrace()
+}
 }
