@@ -8,19 +8,13 @@ def call(body) {
     body()
 
     def msg = pipelineParams.get("msg", "Hello World")
-	try{
 if(msg.equals("Gradle")) {
     stage('GRADLE_BUILD') {
-	  
       	bat 'gradle clean build'
-
 	}
    }
 else if(msg.equals("Maven")) {
 	 stage('MAVEN_BUILD') {
 			bat 'echo %WORKSPACE%'
     }
-} catch(Exception e) {
-     e.printStackTrace()
-	}
 }
